@@ -1,0 +1,58 @@
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+header form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+header .search-bar {
+  width: 600px;
+  height: 40px;
+  border-radius: 5px;
+
+  padding-left: 30px;
+}
+header .search-bar::placeholder {
+  color: lightgray;
+}
+header .icon-search {
+  position: absolute;
+  left: 5px;
+  color: lightgray;
+}
+
+header .btn-container {
+  display: flex;
+  gap: 65px;
+}
+header .btn-subs-log-container {
+  display: flex;
+  gap: 20px;
+}
+header .btn-subs-log,
+header .btn-sell {
+  background: white;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  border: #017580 solid 1px;
+  color: #017580;
+}
+
+header .btn-sell {
+  background: #017580;
+  color: white;
+}
+
+.btn-disconnect {
+  background: #c2275a;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}

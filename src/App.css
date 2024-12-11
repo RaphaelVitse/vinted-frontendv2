@@ -1,0 +1,26 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  background: pink;
+  padding: 0 5px;
+}
+button,
+input {
+  border: none;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+.form-signup-login input[type="text"],
+.form-signup-login input[type="email"],
+.form-signup-login input[type="password"] {
+  height: 40px;
+  padding-left: 5px;
+  border-bottom: 1px solid #fcced2;
+  font-size: 16px;
+}
