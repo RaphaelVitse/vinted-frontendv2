@@ -4,7 +4,12 @@ header .container {
   align-items: center;
   padding: 10px;
 }
-
+header {
+  border-bottom: 1px solid lightgrey;
+  position: fixed;
+  width: 100%;
+  background: white;
+}
 header form {
   position: relative;
   display: flex;
