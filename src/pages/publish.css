@@ -54,21 +54,32 @@
 .dashed-preview-image {
   border: 1px #ebedee dashed;
   border-radius: 3px;
-  height: 200px;
+  gap: 5px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  /* background: pink; */
 }
 /* reduit image */
-.dashed-preview-image img {
-  height: 90%;
-  margin: 0 10px;
+.image-preview {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* background: blue; */
+}
+.image-preview img {
+  width: 150px;
+  height: 180px;
+  object-fit: cover;
 }
 /* bouton X pour supprimer image*/
 .remove-img-button {
   position: relative;
   color: black;
   background-color: white;
-  right: 35px;
+  right: 30px;
   bottom: 75px;
   height: 15px;
   line-height: 15px;

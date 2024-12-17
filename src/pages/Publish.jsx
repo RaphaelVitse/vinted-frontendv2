@@ -4,8 +4,8 @@ import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Publish = ({ token }) => {
-  const [file, setFile] = useState({});
-  const [preview, setPreview] = useState("");
+  const [file, setFile] = useState([]);
+  const [preview, setPreview] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [selectedBrand, setSelectedBrand] = useState("");
@@ -22,7 +22,10 @@ const Publish = ({ token }) => {
     try {
       e.preventDefault();
       const formData = new FormData();
-      formData.append("picture", file);
+      for (let i = 0; i < file.length; i++) {
+        formData.append("picture", file[i]);
+      }
+      //   formData.append("picture", file);
       formData.append("title", title);
       formData.append("description", description);
       formData.append("price", price);
@@ -64,17 +67,26 @@ const Publish = ({ token }) => {
 
         <form onSubmit={handleSubmit}>
           <div className="file-select">
-            {preview ? (
+            {preview.length > 0 ? (
               <div className="dashed-preview-image">
-                <img src={preview} alt="pré-visualisation" />
-                <div
-                  className="remove-img-button"
-                  onClick={() => {
-                    setPreview("");
-                  }}
-                >
-                  X
-                </div>
+                {preview.map((img, index) => (
+                  <div key={index} className="image-preview">
+                    <img src={img} alt={`preview-${index}`} />
+                    <div
+                      className="remove-img-button"
+                      onClick={() => {
+                        const newPreview = [...preview];
+                        const newFiles = [...file];
+                        newPreview.splice(index, 1);
+                        newFiles.splice(index, 1);
+                        setPreview(newPreview);
+                        setFile(newFiles);
+                      }}
+                    >
+                      X
+                    </div>
+                  </div>
+                ))}
               </div>
             ) : (
               <div className="dashed-preview-without">
@@ -89,9 +101,14 @@ const Publish = ({ token }) => {
                     className="input-file"
                     multiple
                     onChange={(event) => {
-                      setFile(event.target.files[0]);
-                      setPreview(URL.createObjectURL(event.target.files[0]));
+                      const files = Array.from(event.target.files); // Convertit FileList en tableau
+                      setFile(files); // Met à jour le state avec plusieurs fichiers
+                      setPreview(
+                        files.map((file) => URL.createObjectURL(file))
+                      ); // Génère des aperçus pour chaque fichier
                     }}
+                    //   setFile(event.target.files[0]);
+                    //   setPreview(URL.createObjectURL(event.target.files[0]));
                   />
                 </div>
               </div>
