@@ -4,7 +4,12 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const ModalSignup = ({ setVisibleLog, setVisibleSign, setToken }) => {
+const ModalLogin = ({
+  setVisibleLog,
+  setVisibleSign,
+  setToken,
+  redirectPath,
+}) => {
   const [formData, setFormData] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
@@ -38,7 +43,12 @@ const ModalSignup = ({ setVisibleLog, setVisibleSign, setToken }) => {
       Cookies.set("token", token, { expires: 60 });
       setToken(token);
       setVisibleLog(false);
-      navigate("/");
+
+      if (redirectPath) {
+        navigate(redirectPath);
+      } else {
+        navigate("/");
+      }
     } catch (error) {
       console.log(error);
       if (error.status === 401) {
@@ -50,8 +60,18 @@ const ModalSignup = ({ setVisibleLog, setVisibleSign, setToken }) => {
   };
   /////////////////////////////////////////////////////////
   return (
-    <div className="modal-root">
-      <div className="modal">
+    <div
+      className="modal-root"
+      onClick={() => {
+        setVisibleLog(false);
+      }}
+    >
+      <div
+        className="modal"
+        onClick={(event) => {
+          event.stopPropagation();
+        }}
+      >
         {/* button pour fermer la modal */}
 
         <button
@@ -95,4 +115,4 @@ const ModalSignup = ({ setVisibleLog, setVisibleSign, setToken }) => {
   );
 };
 
-export default ModalSignup;
+export default ModalLogin;

@@ -44,8 +44,18 @@ const ModalSignup = ({ setVisibleSign, setVisibleLog, setToken }) => {
   };
 
   return (
-    <div className="modal-root">
-      <div className="modal-signup">
+    <div
+      className="modal-root"
+      onClick={() => {
+        setVisibleSign(false);
+      }}
+    >
+      <div
+        className="modal-signup"
+        onClick={(event) => {
+          event.stopPropagation();
+        }}
+      >
         {/* button pour fermer la modal */}
         <button
           className="close-btn"

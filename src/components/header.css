@@ -7,7 +7,9 @@ header .container {
 header {
   border-bottom: 1px solid lightgrey;
   position: fixed;
+  z-index: 2;
   width: 100%;
+  height: 100px;
   background: white;
 }
 header form {
@@ -19,7 +21,7 @@ header .search-bar {
   width: 600px;
   height: 40px;
   border-radius: 5px;
-
+  border: 1px solid lightgrey;
   padding-left: 30px;
 }
 header .search-bar::placeholder {
@@ -60,4 +62,47 @@ header .btn-sell {
   border-radius: 5px;
   border: none;
   outline: none;
+}
+
+/*****************/
+/* Switch Root */
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* margin-left: 20px; */
+  margin-top: 15px;
+}
+.label {
+  font-size: 12px;
+}
+.SwitchRoot {
+  all: unset;
+  width: 42px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 12.5px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.SwitchRoot[aria-checked="true"] {
+  background-color: #007783;
+}
+
+.SwitchThumb {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+}
+
+.SwitchRoot[aria-checked="true"] .SwitchThumb {
+  transform: translateX(22px);
 }

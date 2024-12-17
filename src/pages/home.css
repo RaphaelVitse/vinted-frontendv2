@@ -1,7 +1,9 @@
 /**********************************************
 *********** BANNIERE ***************************
 ***********************************************/
-
+main {
+  padding-top: 100px;
+}
 .title-img {
   background-image: url("../assets/banner.jpg");
   background-position: center;
@@ -11,7 +13,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 200px;
+  position: relative;
+}
+.title-img .container {
+  /* background: blue; */
+  width: 1280px;
 }
 .title-home {
   background: white;
@@ -22,6 +28,21 @@
   gap: 50px;
   height: 210px;
   width: 410px;
+  border-radius: 5px;
+}
+h1 {
+  font-size: 32px;
+  margin-left: 25px;
+}
+.btn-start-sell {
+  width: 185px;
+  height: 45px;
+  border-radius: 8px;
+  background: #007783;
+  color: white;
+  border: none;
+  outline: none;
+  margin-left: 25px;
 }
 /**********************************************
 *********** OFFRES  ***************************
@@ -55,4 +76,32 @@
   width: 230px;
   height: 360px;
   object-fit: cover;
+}
+.pagination {
+  margin: 80px 0;
+  /* background: crimson; */
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.pagination button {
+  width: 140px;
+  padding: 8px;
+  background: #007783;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.pagination button:disabled {
+  background: gray;
+  font-style: italic;
+}
+.home-loader {
+  /* background: pink; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

@@ -1,0 +1,234 @@
+.publish-main {
+  padding-top: 100px;
+  background-color: #ebedee;
+}
+/* Centrer les div comme le main*/
+.publish-container {
+  width: 1280px;
+  margin: 0 auto;
+}
+/* Espacer le h2 du header*/
+.publish-main h2 {
+  font-size: 24px;
+  font-family: "Maison Neue";
+  padding-top: 40px;
+}
+/* creer l esapce de chargement*/
+.file-select {
+  background-color: white;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: 0 0 2px gray;
+}
+.file-select > p {
+  margin: 0 0 10px 0;
+}
+/*ajouter une encadrement dashed pour les photos chargées */
+.dashed-preview-without {
+  border: 1px #ebedee dashed;
+  border-radius: 3px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Ajouter un encadré vert sur le texte Ajoute une photo*/
+.input-design-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #017580;
+  border-radius: 4px;
+  height: 45px;
+  width: 220px;
+}
+.input-design-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #017580;
+  border-radius: 4px;
+  height: 45px;
+  width: 45px;
+}
+.dashed-preview-image {
+  border: 1px #ebedee dashed;
+  border-radius: 3px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+/* reduit image */
+.dashed-preview-image img {
+  height: 90%;
+  margin: 0 10px;
+}
+/* bouton X pour supprimer image*/
+.remove-img-button {
+  position: relative;
+  color: black;
+  background-color: white;
+  right: 35px;
+  bottom: 75px;
+  height: 15px;
+  line-height: 15px;
+  width: 20px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 10px;
+}
+/* modifier couleur de + ajouter une photo */
+.label-file {
+  cursor: pointer;
+  color: #017580;
+  font-weight: bold;
+}
+
+.label-file > span {
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+.label-file:hover {
+  color: #25a5c4;
+}
+
+/* Cacher le bouton par défaut "choisir un fichier" et son label par defaut*/
+.input-file {
+  display: none;
+}
+/* changer la taille du +  */
+.input-sign {
+  font-size: 35px;
+}
+/* Mettre un encadré blanc sur chaque input*/
+.text-input-section {
+  background-color: white;
+  margin: 20px 0;
+  box-shadow: 0 0 2px gray;
+}
+/* gestion de la hauteur de l'espace text des input + bordure  */
+.text-input-section > .text-input:not(:last-child) {
+  height: 95px;
+  border-bottom: 1px solid #ebedee;
+  vertical-align: center;
+}
+
+.text-input-section label {
+  color: #666666;
+}
+.text-input {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+}
+.text-input > h4 {
+  font-weight: normal;
+  margin: 0;
+  vertical-align: baseline;
+}
+.text-input > input {
+  width: 50%;
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  color: black;
+  font-family: "Maison Neue";
+  font-size: 16px;
+}
+.checkbox-section {
+  width: 50%;
+}
+.checkbox-section > input {
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  color: black;
+  font-family: "Maison Neue";
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.text-input > input:focus {
+  border-bottom: 1px solid #017580;
+}
+.checkbox-section > input:focus {
+  border-bottom: 1px solid #017580;
+}
+.text-input > input::placeholder {
+  font-family: "Maison Neue";
+  font-size: 16px;
+  color: #c4c7c9;
+}
+/* couleur de l input prix*/
+.checkbox-section > input::placeholder {
+  font-family: "Maison Neue";
+  font-size: 16px;
+  color: #c4c7c9;
+}
+/* gestion du text area*/
+.text-input > textarea {
+  width: 50%;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid #ebedee;
+  outline: none;
+  color: black;
+  font-family: "Maison Neue";
+  font-size: 16px;
+}
+
+.text-input > textarea:focus {
+  border-bottom: 1px solid #017580;
+  background-color: white;
+}
+/* gestion couleur text area*/
+.text-input > textarea::placeholder {
+  font-family: "Maison Neue";
+  font-size: 16px;
+  color: #c4c7c9;
+}
+/* suppression de la checkbox*/
+.checkbox-input > input {
+  display: none;
+}
+
+.checkbox-design {
+  border-radius: 3px;
+  padding: 2px 11px 2px 11px;
+  margin: 0 15px 0 0;
+  border: 1px solid black;
+}
+/* Couleur de remplissage de la checkbox qd je clique dessus*/
+.checkbox-design-checked {
+  border-radius: 3px;
+  padding: 2px 11px 2px 11px;
+  margin: 0 15px 0 0;
+  background-color: #017580;
+}
+/* Position bouton pour ajouter et soumettre annonce */
+.form-button-div {
+  display: flex;
+  justify-content: flex-end;
+}
+/* Mise en forme bouton pour ajouter et soumettre annonce */
+.form-validation {
+  background-color: #017580;
+  color: white;
+  border: none;
+  font: inherit;
+  outline: inherit;
+  border-radius: 4px;
+  padding: 12px 12px;
+  margin: 50px 0;
+}
+
+.save-offer {
+  background-color: transparent;
+  color: #0ab1ba;
+  border: 1px solid #0ab1ba;
+  font: inherit;
+  outline: inherit;
+  border-radius: 4px;
+  padding: 12px 12px;
+  margin: 50px 15px 50px 0;
+}
