@@ -17,7 +17,7 @@ const Offer = ({ token, visibleLog, setVisibleLog }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:3000/offers/${id}`);
-        console.log("response.data=>", response.data);
+        console.log(response.data);
 
         setData(response.data);
         setIsLoading(false);
@@ -44,40 +44,7 @@ const Offer = ({ token, visibleLog, setVisibleLog }) => {
               }}
             />
             <div className="main-left">
-              {data.product_pictures.length > 0 ? (
-                data.product_pictures.map((offer, index) => {
-                  return (
-                    <div
-                      className="carrousel"
-                      key={data.product_pictures[index].asset_id}
-                    >
-                      <div>
-                        <img
-                          src={offer.secure_url}
-                          alt="image du produit vendu"
-                        />
-                      </div>
-                    </div>
-                  );
-                })
-              ) : (
-                // <div>
-                //   <img
-                //     src={data.product_pictures[1].secure_url}
-                //     alt="image du produit vendu"
-                //   />
-                // </div>
-                // <div>
-                //   <img
-                //     src={data.product_pictures[2].secure_url}
-                //     alt="image du produit vendu"
-                //   />
-                // </div>
-
-                <div className="only-one-img">
-                  <img src={data.product_image.secure_url} alt="" />
-                </div>
-              )}
+              <img src={data.product_image.secure_url} alt="" />
             </div>
 
             <div className="main-right">
@@ -133,7 +100,7 @@ const Offer = ({ token, visibleLog, setVisibleLog }) => {
                         name: data.product_name,
                       },
                     });
-                    // console.log(data.product_price);
+                    console.log("price =", data.product_price);
                   } else {
                     setVisibleLog(!visibleLog);
                     navigate("/payment", {
