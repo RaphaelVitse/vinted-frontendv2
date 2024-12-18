@@ -1,6 +1,6 @@
 import "../pages/payment.css";
 
-const Payment = () => {
+const Payment = ({ token }) => {
   return <div className="payment">Payment</div>;
 };
 
