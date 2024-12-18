@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import { TailSpin as Loader } from "react-loader-spinner";
 
-const Home = ({ title, btnFilterAsc }) => {
+const Home = ({ title, btnFilterAsc, token, setVisibleLog, visibleLog }) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -82,7 +82,18 @@ const Home = ({ title, btnFilterAsc }) => {
           <div className="title-home">
             <h1>Prêt à faire du tri dans vos placards ?</h1>
             <div>
-              <button className="btn-start-sell">Commencer à vendre</button>
+              <button
+                className="btn-start-sell"
+                onClick={() => {
+                  if (token) {
+                    navigate("/offer/publish");
+                  } else {
+                    setVisibleLog(!visibleLog);
+                  }
+                }}
+              >
+                Commencer à vendre
+              </button>
             </div>
           </div>
         </div>

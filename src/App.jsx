@@ -44,6 +44,9 @@ function App() {
                 setTitle={setTitle}
                 btnFilterAsc={btnFilterAsc}
                 setBtnFilterAsc={setBtnFilterAsc}
+                token={token}
+                visibleLog={visibleLog}
+                setVisibleLog={setVisibleLog}
               />
             }
           />

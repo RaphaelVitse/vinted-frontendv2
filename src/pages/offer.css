@@ -1,14 +1,44 @@
 .details-container {
   display: flex;
   justify-content: space-between;
-  padding-top: 100px;
+  padding-top: 120px;
 }
-.main-left img {
-  width: 450px;
+.main-left {
+  width: 800px;
   height: 600px;
-  margin-top: 50px;
+  background: pink;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  gap: 15px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+.carrousel {
+  display: flex;
+  flex-shrink: 0;
+  width: 350px;
+  height: 550px;
+  background: crimson;
+  overflow: hidden;
+}
+.carrousel img {
+  width: 350px;
+  height: 550px;
   object-fit: cover;
+  border-radius: 5px;
   /* background: blue; */
+}
+.only-one-img {
+  margin: 0 auto;
+}
+.only-one-img img {
+  width: 550px;
+
+  object-fit: contain;
+  border-radius: 5px;
 }
 .main-right {
   width: 400px;

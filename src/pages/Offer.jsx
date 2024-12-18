@@ -17,7 +17,7 @@ const Offer = ({ token, visibleLog, setVisibleLog }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:3000/offers/${id}`);
-        console.log(response.data);
+        console.log("response.data=>", response.data);
 
         setData(response.data);
         setIsLoading(false);
@@ -44,7 +44,40 @@ const Offer = ({ token, visibleLog, setVisibleLog }) => {
               }}
             />
             <div className="main-left">
-              <img src={data.product_image.secure_url} alt="" />
+              {data.product_pictures.length > 0 ? (
+                data.product_pictures.map((offer, index) => {
+                  return (
+                    <div
+                      className="carrousel"
+                      key={data.product_pictures[index].asset_id}
+                    >
+                      <div>
+                        <img
+                          src={offer.secure_url}
+                          alt="image du produit vendu"
+                        />
+                      </div>
+                    </div>
+                  );
+                })
+              ) : (
+                // <div>
+                //   <img
+                //     src={data.product_pictures[1].secure_url}
+                //     alt="image du produit vendu"
+                //   />
+                // </div>
+                // <div>
+                //   <img
+                //     src={data.product_pictures[2].secure_url}
+                //     alt="image du produit vendu"
+                //   />
+                // </div>
+
+                <div className="only-one-img">
+                  <img src={data.product_image.secure_url} alt="" />
+                </div>
+              )}
             </div>
 
             <div className="main-right">
