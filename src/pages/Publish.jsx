@@ -35,7 +35,7 @@ const Publish = ({ token }) => {
       formData.append("city", city);
       formData.append("brand", selectedBrand);
       const response = await axios.post(
-        "http://localhost:3000/offer/publish",
+        "https://site--backend-vinted-v2--2652jln5dkl6.code.run/",
         formData,
         {
           headers: {

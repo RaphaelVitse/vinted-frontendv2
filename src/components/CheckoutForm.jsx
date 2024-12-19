@@ -34,10 +34,13 @@ const CheckoutForm = ({ title, amount }) => {
       return;
     }
 
-    const response = await axios.post("http://localhost:3000/payment/", {
-      title,
-      amount,
-    });
+    const response = await axios.post(
+      "https://site--backend-vinted-v2--2652jln5dkl6.code.run/",
+      {
+        title,
+        amount,
+      }
+    );
     console.log("response.data ====", response);
 
     const clientSecret = response.data.paymentIntent.client_secret;

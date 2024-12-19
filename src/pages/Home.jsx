@@ -49,7 +49,7 @@ const Home = ({ title, btnFilterAsc, token, setVisibleLog, visibleLog }) => {
           }
         }
         const response = await axios.get(
-          "http://localhost:3000/offers/" + filters
+          "https://site--backend-vinted-v2--2652jln5dkl6.code.run/" + filters
         );
         console.log(response.data);
         setData(response.data);

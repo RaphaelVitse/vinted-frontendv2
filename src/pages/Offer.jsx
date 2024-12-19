@@ -16,7 +16,9 @@ const Offer = ({ token, visibleLog, setVisibleLog }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/offers/${id}`);
+        const response = await axios.get(
+          `https://site--backend-vinted-v2--2652jln5dkl6.code.run/${id}`
+        );
         console.log(response.data);
 
         setData(response.data);

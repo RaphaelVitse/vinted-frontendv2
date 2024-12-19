@@ -17,12 +17,15 @@ const ModalSignup = ({ setVisibleSign, setVisibleLog, setToken }) => {
     event.preventDefault();
     setErrorMessage(null);
     try {
-      const response = await axios.post("http://localhost:3000/user/signup", {
-        username,
-        email,
-        password,
-        newsletter,
-      });
+      const response = await axios.post(
+        "https://site--backend-vinted-v2--2652jln5dkl6.code.run/",
+        {
+          username,
+          email,
+          password,
+          newsletter,
+        }
+      );
 
       console.log(response.data);
       const token = response.data.token;
