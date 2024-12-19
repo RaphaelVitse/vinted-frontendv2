@@ -10,12 +10,12 @@ const Home = ({ title, btnFilterAsc, token, setVisibleLog, visibleLog }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const limit = 5;
-  console.log("etat de btnfilterprice depuis home", btnFilterAsc);
+  // console.log("etat de btnfilterprice depuis home", btnFilterAsc);
 
   const totalResults = data.count;
-  console.log("totalresult", totalResults);
+  // console.log("totalresult", totalResults);
   const nbMaxpages = Math.ceil(totalResults / limit);
-  console.log("nbmax", nbMaxpages);
+  // console.log("nbmax", nbMaxpages);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -100,7 +100,7 @@ const Home = ({ title, btnFilterAsc, token, setVisibleLog, visibleLog }) => {
       </section>
       <section className="offer-container container">
         {data.offers.map((offer) => {
-          console.log("offerID", offer._id);
+          // console.log("offerID", offer._id);
 
           return (
             <section key={offer._id}>

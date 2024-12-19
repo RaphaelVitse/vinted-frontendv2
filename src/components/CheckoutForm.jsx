@@ -12,7 +12,8 @@ import { useState } from "react";
 const CheckoutForm = ({ title, amount }) => {
   //   const location = useLocation();
   //   const { title, amount } = location.state;
-  console.log("title =>", title);
+  console.log("title =======>", title);
+  console.log("amount =======>", amount);
 
   const stripe = useStripe();
   const elements = useElements();
@@ -33,14 +34,14 @@ const CheckoutForm = ({ title, amount }) => {
       return;
     }
 
-    const response = await axios.post("http://localhost:3000/payment", {
-      title: title,
-      amount: amount,
+    const response = await axios.post("http://localhost:3000/payment/", {
+      title,
+      amount,
     });
-    console.log("response.data ====", response.data);
+    console.log("response.data ====", response);
 
-    const clientSecret = response.data.client_secret;
-    console.log("clientsecret =====" + clientSecret);
+    const clientSecret = response.data.paymentIntent.client_secret;
+    console.log("clientsecret =====", clientSecret);
 
     const stripeResponse = await stripe.confirmPayment({
       elements,

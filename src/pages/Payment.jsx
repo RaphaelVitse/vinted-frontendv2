@@ -12,19 +12,20 @@ const stripePromise = loadStripe(
 const Payment = () => {
   const location = useLocation();
   const { price, name } = location.state;
-
+  console.log("name =>", name);
+  console.log("price =>", price);
   const protectionCost = 0.4;
   const deliveryCost = 0.8;
   const total = (price + protectionCost + deliveryCost).toFixed(2);
-  //   console.log(total);
+  console.log("total=====> ", total);
 
   const options = {
     mode: "payment",
     title: name,
-    amount: Number(total * 100),
+    amount: Math.round(total * 100),
     currency: "eur",
   };
-  console.log(options);
+  console.log("options=======", options);
 
   return (
     <section className="payment">
