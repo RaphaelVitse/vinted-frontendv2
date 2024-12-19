@@ -7,6 +7,7 @@ import { useState } from "react";
 import Home from "./pages/Home";
 import Offer from "./pages/Offer";
 import Publish from "./pages/Publish";
+import Payment from "./pages/Payment";
 
 ///// IMPORT COMPONENT /////////
 import Header from "./components/Header";
@@ -60,6 +61,7 @@ function App() {
               />
             }
           />
+          <Route path="/payment" element={<Payment token={token} />} />
           <Route path="/offer/publish" element={<Publish token={token} />} />
         </Routes>
         {visibleSign && (
